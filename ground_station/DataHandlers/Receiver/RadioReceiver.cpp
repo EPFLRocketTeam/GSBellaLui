@@ -149,7 +149,8 @@ RadioReceiver::handleReceive(std::size_t bytesTransferred) {
         std::bitset<8> x(recvBuffer_[i]);
         cout << x << ' ' << std::flush;
 #endif
-        if (byteDecoder_.processByte(recvBuffer_[i])) {
+        if (byteDecoder_.processByte(recvBuffer_[i])) { 
+        	//true if input results in an overall interpretable datagram
             unpackPayload();
         }
     }
